@@ -1,0 +1,35 @@
+{{#partial "content"}}
+    <h1>Register your Endangered animal here!! </h1>
+    <form action="/endangeredAnimal/new" method="post">
+        <div class="form-group">
+            <label for="hname"  >Animal's Name</label>
+            <input type="text" class="form-control" id="hname" name="hname" placeholder="Type here...">
+        </div>
+        <div class="form-group">
+            <label for="cname">Timestamp</label>
+            <input type="text" class="form-control" id="cname" name="cname" placeholder="Type here...">
+        </div>
+        <div class="form-group">
+            <label for="cname">Age</label>
+            <select class="form-control" name="sqname" id="sqname" class="custom-select" >
+                <option selected>Choose Age here..</option>
+                <option value="NEWBORN">Newborn</option>
+                <option value="YOUNG">Young</option>
+                <option value="ADULT">Adult</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cname">Health Status</label>
+            <select class="form-control" name="sqname" id="sqname" class="custom-select" >
+                <option selected>Choose Health status here..</option>
+                <option value="HEALTHY">Healthy</option>
+                <option value="ILL">Ill</option>
+                <option value="OKAY">Okay</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-danger" >Submit Animal</button>
+
+    </form>
+
+{{/partial}}
+{{> layout.hbs}}

@@ -1,0 +1,25 @@
+{{#partial "content"}}
+    <h1>Register your Normal animal here!! </h1>
+    <form action="/normalAnimal/new" method="post">
+        <div class="form-group">
+            <label for="hname"  >Animal's Name</label>
+            <input type="text" class="form-control" id="hname" name="hname" placeholder="Type here...">
+        </div>
+        <div class="form-group">
+            <label for="sname">Animal's Location</label>
+            <input type="text" class="form-control" id="sname" name="sname" placeholder="Type here...">
+        </div>
+        <div class="form-group">
+            <label for="cname">Ranger's name</label>
+            <input type="text" class="form-control" id="cname" name="cname" placeholder="Type here...">
+        </div>
+        <div class="form-group">
+            <label for="cname">Time</label>
+            <input type="datetime-local" class="form-control" id="cname" name="cname" placeholder="Type here...">
+        </div>
+        <button type="submit" class="btn btn-danger" >Submit Animal</button>
+
+    </form>
+
+{{/partial}}
+{{> layout.hbs}}

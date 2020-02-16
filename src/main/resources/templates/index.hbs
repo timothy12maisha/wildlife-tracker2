@@ -1,0 +1,12 @@
+{{#partial "content"}}
+    <h1>Endangered Animals</h1>
+    {{#if posts}}
+        {{#each posts }}
+            <p>Current Endangered and Normal animals</p>
+            <p>{{ content }} <a href="/heros/{{id}}">read more...</a></p>
+        {{/each}}
+    {{else}}
+        <p>No endangered animals</p>
+    {{/if}}
+{{/partial}}
+{{> layout.hbs}}
