@@ -5,13 +5,9 @@ import static org.junit.Assert.*;
 
 public class EndangeredAnimalTest {
 
-    @Rule
-    public DatabaseRule database = new DatabaseRule();
+   // @Rule
+//    public DatabaseRule database = new DatabaseRule();
 
-    @Test
-    public void getId() {
-
-    }
 
     @Test
     public void getName() {
@@ -43,4 +39,5 @@ public class EndangeredAnimalTest {
         endangeredAnimal.delete();
         assertEquals(0,EndangeredAnimal.getAllAnimals() .size());
     }
+
 }

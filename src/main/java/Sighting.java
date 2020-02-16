@@ -13,6 +13,10 @@ public class Sighting {
         this.rangerName = rangerName;
     }
 
+    public static Object getAllSightings() {
+    }
+
+
     public int getId() {
         return id;
     }

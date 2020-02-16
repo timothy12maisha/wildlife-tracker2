@@ -37,4 +37,7 @@ public class NormalAnimal {
     public void setTimestamp(int timestamp) {
         this.newdate = timestamp;
     }
+
+    public void saveNormal() {
+    }
 }

@@ -17,6 +17,10 @@ public class EndangeredAnimal {
         this.health = health;
     }
 
+    public static Object getAll() {
+    }
+
+
     public int getId() {
         return id;
     }
@@ -77,14 +81,14 @@ public class EndangeredAnimal {
     }
     public static List<EndangeredAnimal> getAllAnimals() {
         try (Connection conn = Database.sql2o.open()) {
-            String sql = "SELECT * FROM endangered_animal ORDER BY id DESC;";
+            String sql = "SELECT * FROM endangeredanimal ORDER BY id DESC;";
             return conn.createQuery(sql)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(EndangeredAnimal.class);
         }
     }
     public EndangeredAnimal findById(int id) {
-        String sql = "SELECT * FROM endangered_animal WHERE id=:id";
+        String sql = "SELECT * FROM endangeredanimal WHERE id=:id";
         try (Connection conn = Database.sql2o.open()){
             EndangeredAnimal animal = conn.createQuery(sql)
                     .addParameter("id",id)
@@ -97,7 +101,7 @@ public class EndangeredAnimal {
     }
     public void delete() {
         try(Connection con = Database.sql2o.open()) {
-            String sql = "DELETE FROM endangered_animal; WHERE id=:id;";
+            String sql = "DELETE FROM endangeredanimal; WHERE id=:id;";
             con.createQuery(sql)
                     .addParameter("id", id)
                     .executeUpdate();
