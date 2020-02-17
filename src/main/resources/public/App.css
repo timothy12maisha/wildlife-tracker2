@@ -75,3 +75,35 @@ height: 450px;
     background-color: transparent;
     margin: 25px;
 }
+.carousel-inner{
+height: 450px;
+}
+#Age {
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 25px;
+}
+
+#Health {
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 25px;
+}
+#NormalAnimalName{
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 25px;
+}
+#NormalAnimalTime{
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: transparent;
+    margin: 25px;
+}

@@ -7,11 +7,18 @@ public class NormalAnimal {
     private int id;
     private String name;
     private int newdate;
+    private static ArrayList<NormalAnimal> instances = new ArrayList<>();
 
     public NormalAnimal(int id, String name, int newdate) {
         this.id = id;
         this.name = name;
         this.newdate = newdate;
+
+        instances.add(this);
+        this.id = instances.size();
+    }
+    public static ArrayList<NormalAnimal> getAll(){
+        return instances;
     }
 
     public int getId() {
@@ -40,4 +47,5 @@ public class NormalAnimal {
 
     public void saveNormal() {
     }
+
 }

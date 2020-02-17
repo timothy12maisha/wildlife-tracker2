@@ -10,15 +10,17 @@ public class EndangeredAnimal {
     private String name;
     private int newdate;
     private String health;
+    private static ArrayList<EndangeredAnimal> instances = new ArrayList<>();
 
     public EndangeredAnimal( String name, int newdate, String health) {
         this.name = name;
         this.newdate = newdate;
         this.health = health;
+
+        instances.add(this);
+        this.id = instances.size();
     }
 
-    public static Object getAll() {
-    }
 
 
     public int getId() {
@@ -51,6 +53,17 @@ public class EndangeredAnimal {
 
     public void setHealth(String health) {
         this.health = health;
+    }
+
+    public static ArrayList<EndangeredAnimal> getInstances() {
+        return instances;
+    }
+
+    public static void setInstances(ArrayList<EndangeredAnimal> instances) {
+        EndangeredAnimal.instances = instances;
+    }
+    public static ArrayList<EndangeredAnimal> getAll(){
+        return instances;
     }
 
     @Override

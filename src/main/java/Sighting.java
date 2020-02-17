@@ -6,14 +6,15 @@ public class Sighting {
     private int id;
     private String location;
     private String rangerName;
+    private static ArrayList<Sighting> instances = new ArrayList<>();
 
     public Sighting(int id, String location, String rangerName) {
         this.id = id;
         this.location = location;
         this.rangerName = rangerName;
-    }
 
-    public static Object getAllSightings() {
+        instances.add(this);
+        this.id = instances.size();
     }
 
 
@@ -39,5 +40,16 @@ public class Sighting {
 
     public void setRangerName(String rangerName) {
         this.rangerName = rangerName;
+    }
+
+    public static ArrayList<Sighting> getInstances() {
+        return instances;
+    }
+
+    public static void setInstances(ArrayList<Sighting> instances) {
+        Sighting.instances = instances;
+    }
+    public static ArrayList<Sighting> getAll(){
+        return instances;
     }
 }

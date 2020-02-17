@@ -11,10 +11,10 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             model.put("allEndangered", EndangeredAnimal.getAllAnimals());
             model.put("allAnimals", EndangeredAnimal.getAll());
-            model.put("allSightings", Sighting.getAllSightings());
+            model.put("allSightings", Sighting.getAll());
             return new ModelAndView(model,"registry.hbs");
         },new HandlebarsTemplateEngine());
-        get("/animal/NormalAnimal", (req,res)-> {
+        get("/NormalAnimal/new", (req,res)-> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model,"NormalAnimalForm.hbs");
         }, new HandlebarsTemplateEngine());
@@ -22,11 +22,11 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model,"EndangeredAnimalForm.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/sighting", (req,res)-> {
+        get("/sighting/new", (req,res)-> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model,"sighting.hbs");
         }, new HandlebarsTemplateEngine());
-        post("/new/NormalAnimal",(req,res)->{
+        post("/NormalAnimal/new",(req,res)->{
             Map<String, Object> model = new HashMap<>();
             String name = req.queryParams("NormalAnimalName");
             String time = req.queryParams("NormalAnimalTime");
@@ -34,14 +34,14 @@ public class App {
             newNormalAnimal.saveNormal();
             return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
-        post("/new/sighting",(req,res)->{
+        post("/sighting/new",(req,res)->{
             Map<String,Object>model = new HashMap<>();
             String rangerName = req.queryParams("rangerName");
             String animalLocation = req.queryParams("animalLocation");
             Sighting sighting = new Sighting(1,animalLocation, rangerName);
-            return new ModelAndView(model,"success.hbs");
+            return new ModelAndView(model,"Success.hbs");
         },new HandlebarsTemplateEngine());
-        post("new/EndangeredAnimal" ,(req,res)->{
+        post("EndangeredAnimal/new" ,(req,res)->{
             Map<String,Object> model = new HashMap<>();
             String name = req.queryParams("AnimalName");
             String time = req.queryParams("NewTime");
@@ -50,8 +50,8 @@ public class App {
             EndangeredAnimal endangered = new EndangeredAnimal("",2001,"");
             endangered.saveEndangered();
             model.put("EndangeredAnimal",endangered);
-            model.put("template", "success.hbs");
-            return new ModelAndView(model,"success.hbs");
+            model.put("template", "Success.hbs");
+            return new ModelAndView(model,"Success.hbs");
         },new HandlebarsTemplateEngine());
     }
 }

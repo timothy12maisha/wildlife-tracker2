@@ -1,16 +1,16 @@
 {{#partial "content"}}
     <h1>Register your Endangered animal here!! </h1>
-    <form action="/endangeredAnimal/new" method="post">
+    <form action="/EndangeredAnimal/new" method="post">
         <div class="form-group">
-            <label for="hname"  >Animal's Name</label>
+            <label for="AnimalName"  >Animal's Name</label>
             <input type="text" class="form-control" id="AnimalName" name="AnimalName" placeholder="Type here...">
         </div>
         <div class="form-group">
-            <label for="cname">Timestamp</label>
+            <label for="NewTime">Timestamp</label>
             <input type="text" class="form-control" id="NewTime" name="NewTime" placeholder="Type here...">
         </div>
         <div class="form-group">
-            <label for="cname">Age</label>
+            <label for="Age">Age</label>
             <select class="form-control" name="Age" id="Age" class="custom-select" >
                 <option selected>Choose Age here..</option>
                 <option value="NEWBORN">Newborn</option>
@@ -19,7 +19,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="cname">Health Status</label>
+            <label for="Health">Health Status</label>
             <select class="form-control" name="Health" id="Health" class="custom-select" >
                 <option selected>Choose Health status here..</option>
                 <option value="HEALTHY">Healthy</option>
