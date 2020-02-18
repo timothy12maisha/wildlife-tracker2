@@ -33,19 +33,11 @@ public class EndangeredAnimalTest {
         assertEquals("sick",newEndangeredAnimal.getHealth());
     }
     @Test
-    public void save_insertObjectIntoDatabase_Animal(){
+    public void saves_endangeredAnimals_to_database(){
         Date testDate = new Date();
         EndangeredAnimal newEndangeredAnimal = new EndangeredAnimal("lion",new Timestamp(12-12-2009),"sick");
         newEndangeredAnimal.saveEndangered();
         assertTrue(EndangeredAnimal.getAllAnimals().get(0).equals(newEndangeredAnimal));
-    }
-    @Test
-    public void delete_deleteAnimalFromDatabase_0(){
-        Date testDate = new Date();
-        EndangeredAnimal endangeredAnimal = new EndangeredAnimal("lion",new Timestamp(12-12-2009),"sick");
-        endangeredAnimal.saveEndangered();
-        endangeredAnimal.delete();
-        assertEquals(0,EndangeredAnimal.getAllAnimals() .size());
     }
 
 }

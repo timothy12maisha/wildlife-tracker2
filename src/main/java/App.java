@@ -30,9 +30,7 @@ public class App {
             String age = request.queryParams("Age");
             String health = request.queryParams("Health");
             EndangeredAnimal endangered = new EndangeredAnimal("",new Timestamp(12-12-2009),"");
-//            endangered.saveEndangered();
-//            model.put("EndangeredAnimal",endangered);
-//            model.put("template", "Success.hbs");
+
             return new ModelAndView(model,"Success.hbs");
         },new HandlebarsTemplateEngine());
 
