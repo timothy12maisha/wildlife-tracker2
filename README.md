@@ -1,6 +1,6 @@
 # Heros squad
 
-[Wildlife-tracker](https://github.com/timothy12maisha/wildlife-tracker2) is a website where we make Heroes and squads 
+[Wildlife-tracker](https://github.com/timothy12maisha/wildlife-tracker2) is a website where we rangers can track the wildlife whether endangered or normal.
 
 
 ## Getting Started
