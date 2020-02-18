@@ -1,18 +1,16 @@
-import org.sql2o.*;
 import org.sql2o.Connection;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
+
+import java.sql.Timestamp;
+import java.util.*;
 
 public class EndangeredAnimal {
     private int id;
     private String name;
-    private int newdate;
+    private Timestamp newdate;
     private String health;
     private static ArrayList<EndangeredAnimal> instances = new ArrayList<>();
 
-    public EndangeredAnimal( String name, int newdate, String health) {
+    public EndangeredAnimal(String name, Timestamp newdate, String health) {
         this.name = name;
         this.newdate = newdate;
         this.health = health;
@@ -39,7 +37,7 @@ public class EndangeredAnimal {
         this.name = name;
     }
 
-    public int getTimestamp() {
+    public Date getTimestamp() {
         return newdate;
     }
 

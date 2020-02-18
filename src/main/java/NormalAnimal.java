@@ -1,4 +1,5 @@
 // import org.sql2o.*;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -6,10 +7,10 @@ import java.util.List;
 public class NormalAnimal {
     private int id;
     private String name;
-    private int newdate;
+    private Timestamp newdate;
     private static ArrayList<NormalAnimal> instances = new ArrayList<>();
 
-    public NormalAnimal(int id, String name, int newdate) {
+    public NormalAnimal(int id, String name, Timestamp newdate) {
         this.id = id;
         this.name = name;
         this.newdate = newdate;
@@ -37,12 +38,12 @@ public class NormalAnimal {
         this.name = name;
     }
 
-    public int getTimestamp() {
+    public Timestamp getTimestamp() {
         return newdate;
     }
 
     public void setTimestamp(int timestamp) {
-        this.newdate = timestamp;
+        this.newdate = newdate;
     }
 
     public void saveNormal() {

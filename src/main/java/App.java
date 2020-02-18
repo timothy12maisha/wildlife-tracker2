@@ -1,6 +1,8 @@
 
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 import static spark.Spark.*;
@@ -12,7 +14,7 @@ public class App {
             model.put("allEndangered", EndangeredAnimal.getAllAnimals());
             model.put("allAnimals", EndangeredAnimal.getAll());
             model.put("allSightings", Sighting.getAll());
-            return new ModelAndView(model,"registry.hbs");
+            return new ModelAndView(model,"AllAnimals.hbs");
         },new HandlebarsTemplateEngine());
         get("/NormalAnimal/new", (req,res)-> {
             Map<String, Object> model = new HashMap<>();
@@ -22,7 +24,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model,"EndangeredAnimalForm.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/sighting/new", (req,res)-> {
+        get("/Sighting/new", (req,res)-> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model,"sighting.hbs");
         }, new HandlebarsTemplateEngine());
@@ -30,11 +32,11 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String name = req.queryParams("NormalAnimalName");
             String time = req.queryParams("NormalAnimalTime");
-            NormalAnimal newNormalAnimal = new NormalAnimal(1,"",2001);
+            NormalAnimal newNormalAnimal = new NormalAnimal(1,"",new Timestamp(12-12-2009));
             newNormalAnimal.saveNormal();
             return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
-        post("/sighting/new",(req,res)->{
+        post("/Sighting/new",(req,res)->{
             Map<String,Object>model = new HashMap<>();
             String rangerName = req.queryParams("rangerName");
             String animalLocation = req.queryParams("animalLocation");
@@ -47,7 +49,7 @@ public class App {
             String time = req.queryParams("NewTime");
             String age = req.queryParams("Age");
             String health = req.queryParams("Health");
-            EndangeredAnimal endangered = new EndangeredAnimal("",2001,"");
+            EndangeredAnimal endangered = new EndangeredAnimal("",new Timestamp(12-12-2009),"");
             endangered.saveEndangered();
             model.put("EndangeredAnimal",endangered);
             model.put("template", "Success.hbs");
